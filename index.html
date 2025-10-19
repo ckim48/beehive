@@ -27,39 +27,24 @@
         --bee-ink:#4b3b1f;
         --bee-bg:#fff9e6;
       }
-
-      /* ===== Global fixes to prevent X scroll ===== */
-      html, body { max-width:100vw; overflow-x:hidden; }
-      .container, .section, .row, .hero, #problem, #about, #history, #contact, footer { overflow-x:hidden; }
-      img, svg, video, canvas { max-width:100%; height:auto; display:block; }
-      /* Bootstrap rows can extend via negative gutters on tiny screens; clamp them */
-      .row { margin-right:0; margin-left:0; }
-
       *{box-sizing:border-box}
       body{
         font-family:'Poppins',sans-serif;
         background:var(--bee-bg);
         color:var(--bee-dark);
-        margin:0;
+        margin:0; overflow-x:hidden;
       }
 
       /* Navbar */
       .navbar{
         background:linear-gradient(90deg,var(--bee-yellow),var(--bee-orange));
-        padding: 0.6rem 0; /* smaller vertical height */
       }
-      .navbar-brand{font-weight:800;color:#fff!important; font-size:1.35rem; letter-spacing:.2px;}
-      .nav-logo { height:45px; width:auto; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15)); }
-      .nav-link{color:#fff!important;font-weight:500; font-size:.98rem; padding:.5rem 1rem; transition:opacity .25s ease;}
-      .nav-link:hover{text-decoration:underline; opacity:1;}
+      .navbar-brand{font-weight:700;color:#fff!important}
+      .nav-link{color:#fff!important;font-weight:500}
+      .nav-link:hover{text-decoration:underline}
       .navbar .navbar-toggler{border-color:rgba(255,255,255,.6)}
       .navbar .navbar-toggler-icon{
         background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
-      @media (max-width: 991.98px){
-        .navbar-brand{font-size:1.15rem;}
-        .nav-logo{height:30px;}
-        .nav-link{font-size:.95rem; padding:.4rem .8rem;}
       }
 
       /* Hero */
@@ -78,15 +63,13 @@
         line-height:1.1;
         letter-spacing:.2px;
         font-size:clamp(2rem, 3.4vw + 1rem, 3.5rem);
-        margin-top:-0.6rem;
+        margin-top:-0.6rem; /* bring closer to image */
         margin-bottom:1rem;
       }
       .hero-lead{
         font-size:1.125rem;
         max-width:46ch;
         color:var(--bee-ink);
-        margin-inline:auto;
-        text-wrap:balance;
       }
       .btn-bee{
         background:var(--bee-orange);
@@ -102,261 +85,160 @@
         color:var(--bee-dark);
         transform:translateY(-2px);
       }
+
       .btn-bee2{
-        background:white; color:black; border:2px solid var(--bee-orange);
-        border-radius:999px; padding:.85rem 1.6rem; font-weight:700;
+        background:white;
+        color:black;
+        border:2px solid var(--bee-orange);;
+        border-radius:999px;
+        padding:.85rem 1.6rem;
+        font-weight:700;
         transition:.25s transform, .25s background-color, .25s box-shadow;
         box-shadow:0 8px 18px rgba(243,156,18,.25);
       }
-      .btn-bee2:hover{ background:var(--bee-yellow); color:var(--bee-dark); transform:translateY(-2px); }
-      .btn-bee3{
-        background:white; color:black; border:2px solid var(--bee-orange);
-        border-radius:999px; padding:.65rem 1.1rem; font-weight:700; font-size:14px;
+      .btn-bee2:hover{
+        background:var(--bee-yellow);
+        color:var(--bee-dark);
+        transform:translateY(-2px);
+      }
+
+            .btn-bee3{
+        background:white;
+        color:black;
+        border:2px solid var(--bee-orange);;
+        border-radius:999px;
+        padding:.65rem 1.1rem;
+        font-weight:700;
+        font-size: 14px;
         transition:.25s transform, .25s background-color, .25s box-shadow;
         box-shadow:0 8px 18px rgba(243,156,18,.25);
       }
-      .btn-bee3:hover{ background:var(--bee-yellow); color:#fff; }
-      .logo-card img{ height:min(620px, 66vh); width:auto; }
+      .btn-bee3:hover{
+        background:var(--bee-yellow);
+        color: white;
+      }
+
+      .logo-card img{
+        height:min(620px, 66vh);
+        width:auto;
+      }
+
       .wave{
-        position:absolute; inset:auto 0 0 0; height:160px; opacity:.25;
-        background:url('https://svgshare.com/i/16Vb.svg') repeat-x; background-size:cover;
-        pointer-events:none; z-index:0;
+        position:absolute;
+        inset:auto 0 0 0;
+        height:160px;
+        opacity:.25;
+        background:url('https://svgshare.com/i/16Vb.svg') repeat-x;
+        background-size:cover;
       }
+
       .section-pad{padding-block:clamp(2rem,4vw,4rem)}
-      @media (max-width:991.98px){ .hero{padding-top:76px} }
-      .hero > .container { position: relative; z-index: 2; }
+      @media (max-width:991.98px){
+        .hero{padding-top:76px}
+      }
+/* Navbar Enhancements */
+.navbar {
+  background: linear-gradient(90deg, var(--bee-yellow), var(--bee-orange));
+  padding: 0.6rem 0; /* smaller vertical height */
+}
 
-      /* Modal brand style */
-      #downloadModal .btn-ghost{
-        background:#fff; border:2px solid var(--bee-orange); color:var(--bee-dark);
-        border-radius:999px; font-weight:700;
-      }
-      #downloadModal .btn-ghost:hover{ background:var(--bee-yellow); transform:translateY(-1px); }
+.navbar-brand {
+  font-weight: 800;
+  color: #fff !important;
+  font-size: 1.35rem; /* slightly larger title */
+  letter-spacing: 0.2px;
+}
 
-      /* =========================
-         #problem (scoped)
-         ========================= */
-      #problem{
-        background: linear-gradient(180deg,#fff 0%, #fffdf7 100%);
-        position: relative;
-      }
-      #problem .section-head{
-        text-align:center; max-width:900px; margin:0 auto 5.5rem;
-      }
-      #problem .kicker{
-        display:inline-block; padding:.4rem .8rem; border-radius:999px;
-        background:rgba(248,180,0,.18); border:1px solid rgba(248,180,0,.35);
-        color:#7a5a1d; font-weight:600; font-size:.9rem;
-      }
-      #problem .title{
-        font-weight:800; color:var(--bee-dark);
-        font-size:clamp(1.8rem, 2.4vw + 1rem, 2.6rem);
-        margin:.5rem 0 .25rem;
-      }
-      #problem .lead{ color:var(--bee-ink); font-size:1.06rem; }
+.nav-logo {
+  height: 55px; /* balanced with text */
+  width: auto;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+}
 
-      /* ===== Desktop: two columns (rail + stream) ===== */
-      #problem .flow{
-        display:grid;
-        grid-template-columns: minmax(110px,150px) minmax(0,1fr);
-        gap: 1.75rem;
-      }
-      @media (min-width: 1400px){
-        #problem .flow{ grid-template-columns: 170px minmax(0,1fr); }
-      }
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.25s ease;
+}
 
-      /* Sticky vertical rail (desktop) */
-      #problem .rail{
-        position: sticky; top:96px; align-self:start;
-        padding:.8rem 1rem;
-        border-radius:16px; background:rgba(255,255,255,.85);
-        border:1px solid rgba(2,6,23,.08);
-        box-shadow:0 8px 20px rgba(2,6,23,.06);
-        display:flex; flex-direction:column; gap:.65rem;
-        height:fit-content;
-      }
-      #problem .rail .step{
-        display:flex; align-items:center; gap:.55rem;
-        padding:.45rem .5rem; border-radius:10px;
-        transition:background .2s ease, transform .2s ease;
-        white-space:nowrap;
-      }
-      #problem .rail .step .num{
-        width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
-        background:var(--bee-yellow); color:#111; font-weight:800; font-size:.9rem;
-        box-shadow:0 4px 10px rgba(248,180,0,.22);
-        flex: 0 0 30px;
-      }
-      #problem .rail .step .label{ font-weight:700; color:var(--bee-dark); font-size:.9rem; }
-      #problem .rail .step.active{ background:rgba(248,180,0,.14); transform:translateX(3px); }
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
 
-      /* Content cards */
-      #problem .rowblock{ margin-bottom:3.5rem; scroll-margin-top:110px; }
-      @media (min-width: 992px){ #problem .rowblock{ margin-bottom:4rem; } }
-      #problem .card-lite{
-        background:rgba(255,255,255,.9);
-        border:1px solid rgba(2,6,23,.08);
-        border-radius:16px;
-        box-shadow:0 12px 28px rgba(2,6,23,.08);
-        padding:1.5rem 1.6rem;
-        height:100%;
-      }
-      #problem h3{ font-weight:800; color:var(--bee-dark); margin:0 0 .6rem; }
-      #problem p{ color:var(--bee-ink); margin:0; font-size:1.05rem; }
-      #problem .pimg{
-        width:100%; max-height:400px; object-fit:cover;
-        border-radius:16px; box-shadow:0 10px 22px rgba(0,0,0,.08);
-      }
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    font-size: 1.15rem;
+  }
+  .nav-logo {
+    height: 30px;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+.buttons{
+  z-index: 999;
+}
+.hero { position: relative; }
+.hero > .container { position: relative; z-index: 2; }
 
-      /* Alternate image/text on desktop */
-      @media (min-width: 992px){
-        #problem .rowblock .col-text{ order:1; }
-        #problem .rowblock .col-img{ order:2; }
-        #problem .rowblock.alt .col-text{ order:2; }
-        #problem .rowblock.alt .col-img{ order:1; }
-      }
+/* Make the wave purely decorative */
+.wave {
+  pointer-events: none;   /* don't block clicks/hover */
+  z-index: 0;             /* behind content */
+}
 
-      /* CTA buttons */
-      #problem .actions .btn{
-        padding:.9rem 1.6rem; border-radius:999px; font-weight:700;
-        box-shadow:0 8px 18px rgba(243,156,18,.18);
-      }
-      #problem .btn-ghost{
-        background:#fff; border:2px solid var(--bee-orange); color:var(--bee-dark);
-        transition:.25s transform, .25s background-color;
-      }
-      #problem .btn-ghost:hover{ background:var(--bee-yellow); transform:translateY(-2px); }
-      #problem .mb-6{ margin-bottom: 100px; }
+/* Your CTA wrapper needs positioning for z-index to work */
+.buttons {
+  position: relative;
+  z-index: 3;
+}
+/* Modal tweaks to match brand */
+#downloadModal .btn-ghost{
+  background:#fff; border:2px solid var(--bee-orange); color:var(--bee-dark);
+  border-radius:999px; font-weight:700;
+}
+#downloadModal .btn-ghost:hover{ background:var(--bee-yellow); transform:translateY(-1px); }
 
-      /* ===== Mobile: rail becomes a horizontal stepper (no X scroll) ===== */
-      @media (max-width: 991.98px){
-        #problem .flow{ grid-template-columns: 1fr; gap:1rem; }
 
-        /* turn the rail horizontal and non-sticky */
-        #problem .rail{
-          position: static;
-          display:flex; flex-direction:row; justify-content:center; align-items:center;
-          gap:.75rem; padding:.6rem .75rem; border-radius:999px;
-          max-width:100%;
-          margin-inline:auto;
-          overflow-x:auto;               /* allow gentle swipe if needed */
-          scrollbar-width:none;          /* hide scrollbar (Firefox) */
-        }
-        #problem .rail::-webkit-scrollbar{ display:none; } /* hide (WebKit) */
-
-        #problem .rail .step{
-          background:rgba(255,255,255,.75);
-          padding:.35rem .6rem; border-radius:999px;
-        }
-        #problem .rail .step.active{ transform:none; }
-
-        /* labels visible on mobile for clarity */
-        #problem .rail .step .label{ display:inline-block; font-size:.86rem; }
-
-        /* images/text stack naturally; ensure no overflow */
-        #problem .rowblock{ margin-bottom:2.25rem; }
-      }
-
-      /* ===== About ===== */
-      #about { background-color: #fffdf5; }
-      #about h2 { font-weight:700; color:var(--bee-dark); }
-      #about p { color:var(--bee-ink); font-size:1.05rem; text-align: justify; }
-      #about .about-img {
-        border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.08);
-        max-height:420px; width:100%; object-fit:cover;
-      }
-      #about .btn-bee{ background:var(--bee-orange); color:#fff; border-radius:999px; padding:.8rem 1.8rem; font-weight:600; transition:.3s; box-shadow:0 8px 18px rgba(243,156,18,.25); }
-      #about .btn-bee:hover{ background:var(--bee-yellow); color:var(--bee-dark); transform:translateY(-2px); }
-
-      /* ===== History (timeline) ===== */
-      #history{
-        position:relative;
-        background:linear-gradient(180deg, #fffef8 0%, #fffdf3 55%, #fff9e6 100%);
-      }
-      #history .section-head{ text-align:center; max-width:980px; margin:0 auto 2.2rem; }
-      #history .kicker{
-        display:inline-block; padding:.4rem .8rem; border-radius:999px;
-        background:rgba(248,180,0,.18); border:1px solid rgba(248,180,0,.35);
-        color:#7a5a1d; font-weight:600; font-size:.9rem;
-      }
-      #history .title{ font-weight:800; color:var(--bee-dark); font-size:clamp(1.6rem,2.2vw + 1rem,2.4rem); margin:.5rem 0 .25rem; letter-spacing:.2px; }
-      #history .lead{ color:var(--bee-ink); font-size:1.06rem; }
-
-      #history .spine{
-        position:absolute; left:20px; top:160px; bottom:80px; width:3px;
-        background:linear-gradient(180deg, var(--bee-yellow), var(--bee-orange));
-        opacity:.32; border-radius:2px; z-index:0;
-      }
-      #history .dot{
-        position:absolute; left:-50px; width:22px; height:22px;
-        border-radius:50%; background:var(--bee-orange);
-        box-shadow:0 0 0 8px rgba(243,156,18,.12);
-        top:calc(50% - 11px);
-        z-index:1;
-      }
-      #history .trow{ position:relative; margin:2.5rem 0 2.5rem 5rem; }
-      #history .tcard{
-        background:rgba(255,255,255,.92);
-        border:1px solid rgba(2,6,23,.08);
-        border-radius:16px;
-        box-shadow:0 8px 22px rgba(2,6,23,.08);
-        padding:1.5rem 1.75rem;
-        position:relative; z-index:2;
-      }
-      #history .date-badge{
-        display:inline-block; font-weight:700; font-size:.85rem; letter-spacing:.2px; color:#1b1406;
-        background:linear-gradient(90deg, rgba(248,180,0,.16), rgba(243,156,18,.16));
-        border:1px solid rgba(248,180,0,.35);
-        border-radius:999px; padding:.35rem .85rem;
-      }
-      #history h3{ font-weight:800; color:var(--bee-dark); margin:.6rem 0 .5rem; }
-      #history p{ color:var(--bee-ink); margin:0 0 .4rem; }
-
-      /* Mobile timeline: keep everything inside viewport with extra padding instead of negative offsets */
-      @media (max-width:768px){
-        #history .container{ padding-left:1.25rem; padding-right:1.25rem; }
-        #history .spine{ left:14px; }
-        #history .trow{ margin-left:3.25rem; }     /* a bit less to avoid overflow */
-        #history .dot{ left:-32px; width:18px; height:18px; top:calc(50% - 9px); box-shadow:0 0 0 6px rgba(243,156,18,.12); }
-      }
-
-      /* ===== Contact ===== */
-      #contact { background: linear-gradient(180deg, #fff9e6 0%, #fffef8 100%); }
-      #contact h2 { font-weight:800; color:var(--bee-dark); margin-bottom:1rem; }
-      #contact p { color:var(--bee-ink); font-size:1.05rem; margin-bottom:1.8rem; }
-      #contact .email-link{
-        display:inline-block; background:var(--bee-orange); color:#fff; padding:.85rem 1.8rem;
-        border-radius:999px; font-weight:700; text-decoration:none;
-        box-shadow:0 8px 18px rgba(243,156,18,.25); transition: all .3s ease;
-      }
-      #contact .email-link:hover{ background:var(--bee-yellow); color:var(--bee-dark); transform:translateY(-2px); }
     </style>
   </head>
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <img src="assets/logo_nobg.png" alt="Beehive Logo" class="nav-logo" />
-          <span>Beehive</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <img src="assets/logo_nobg.png" alt="Beehive Logo" class="nav-logo" />
+      <span>Beehive</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
-            <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
-            <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-bee3" data-bs-toggle="modal" data-bs-target="#downloadModal">Download App</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
+        <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+        <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a
+            class="btn btn-bee3"
+            data-bs-toggle="modal"
+            data-bs-target="#downloadModal"
+          >
+            Download App
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Hero -->
     <section class="hero section-pad">
@@ -365,314 +247,632 @@
         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="250">
           BeeHive: <span style="color:var(--bee-dark)">Fight the Mites, Save the Bees</span>
         </h1>
-        <p class="hero-lead" data-aos="fade-up" data-aos-delay="350">
+        <p class="hero-lead mx-auto" data-aos="fade-up" data-aos-delay="350">
           BeeHive uses AI to detect and prevent Varroa mite infections — protecting bee colonies and securing global food supply.
         </p>
-        <div class="d-flex gap-3 justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="450">
-          <a href="#learn" class="btn btn-bee">Learn More</a>
-          <a class="btn btn-bee2" data-bs-toggle="modal" data-bs-target="#downloadModal">Download App</a>
-        </div>
+<div class="d-flex gap-3 justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="450">
+  <a href="#learn" class="btn btn-bee">Learn More</a>
+  <a
+    class="btn btn-bee2"
+    data-bs-toggle="modal"
+    data-bs-target="#downloadModal"
+  >Download App</a>
+</div>
+
       </div>
-      <div class="wave" aria-hidden="true"></div>
+      <div class="wave"></div>
     </section>
 
     <!-- Download App Modal -->
-    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="border-radius:16px;">
-          <div class="modal-header" style="border:0;">
-            <h5 class="modal-title fw-bold" id="downloadModalLabel">Download BeeHive App</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+<div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:16px;">
+      <div class="modal-header" style="border:0;">
+        <h5 class="modal-title fw-bold" id="downloadModalLabel">Download BeeHive App</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-          <div class="modal-body">
-            <p class="mb-3" style="color:var(--bee-ink);">
-              The BeeHive mobile app is launching soon. Get notified the moment it’s available.
-            </p>
+      <div class="modal-body">
+        <p class="mb-3" style="color:var(--bee-ink);">
+          The BeeHive mobile app is launching soon. Get notified the moment it’s available.
+        </p>
 
-            <div class="d-flex gap-2 flex-wrap mb-3">
-              <button class="btn btn-outline-secondary rounded-pill px-3" disabled>
-                <i class="bi bi-apple"></i> App Store (Soon)
-              </button>
-              <button class="btn btn-outline-secondary rounded-pill px-3" disabled>
-                <i class="bi bi-android2"></i> Google Play (Soon)
-              </button>
+        <!-- Store badges (disabled look for now) -->
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <button class="btn btn-outline-secondary rounded-pill px-3" disabled>
+            <i class="bi bi-apple"></i> App Store (Soon)
+          </button>
+          <button class="btn btn-outline-secondary rounded-pill px-3" disabled>
+            <i class="bi bi-android2"></i> Google Play (Soon)
+          </button>
+        </div>
+
+        <!-- Simple email capture (non-functional placeholder) -->
+        <form id="notifyForm" class="d-flex gap-2">
+          <input type="email" class="form-control" id="notifyEmail" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-bee fw-semibold">Notify me</button>
+        </form>
+
+        <div id="notifyThanks" class="mt-3 d-none" style="color:var(--bee-dark);">
+          Thanks—we’ll email you as soon as the app is live.
+        </div>
+      </div>
+
+      <div class="modal-footer" style="border:0;">
+        <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== Problem (rail outside container on desktop) ============== -->
+<section id="problem" class="section section-pad">
+  <style>
+    :root{
+      --rail-w: 180px;            /* desktop rail width */
+      --rail-gap: 1.25rem;        /* space between rail and content */
+    }
+
+    #problem{
+      position: relative;
+      background: linear-gradient(180deg,#fff 0%, #fffdf7 100%);
+    }
+
+    #problem .section-head{
+      text-align:center; max-width:900px; margin:0 auto 5.5rem;
+    }
+    #problem .kicker{
+      display:inline-block; padding:.4rem .8rem; border-radius:999px;
+      background:rgba(248,180,0,.18); border:1px solid rgba(248,180,0,.35);
+      color:#7a5a1d; font-weight:600; font-size:.9rem;
+    }
+    #problem .title{
+      font-weight:800; color:var(--bee-dark);
+      font-size:clamp(1.8rem, 2.4vw + 1rem, 2.6rem);
+      margin:.5rem 0 .25rem;
+    }
+    #problem .lead{ color:var(--bee-ink); font-size:1.06rem; }
+
+    /* ===== Desktop layout: full-width grid with a left rail column ===== */
+    #problem .problem-grid{
+      display: grid;
+      grid-template-columns: minmax(150px, var(--rail-w)) minmax(0, 1fr);
+      align-items: start;
+      gap: var(--rail-gap);
+    }
+
+    /* Rail (desktop only) */
+    #problem .rail{
+      position: sticky; top: 96px; left:10px; align-self: start;
+      padding:.8rem 1rem;
+      border-radius:16px; background:rgba(255,255,255,.85);
+      border:1px solid rgba(2,6,23,.08);
+      box-shadow:0 8px 20px rgba(2,6,23,.06);
+      display:flex; flex-direction:column; gap:.65rem;
+      height: fit-content;
+    }
+    #problem .rail .step{
+      display:flex; align-items:center; gap:.55rem;
+      padding:.45rem .6rem; border-radius:10px;
+      transition:background .2s ease, transform .2s ease;
+      white-space:nowrap;
+    }
+    #problem .rail .step .num{
+      width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+      background:var(--bee-yellow); color:#111; font-weight:800; font-size:.9rem;
+      box-shadow:0 4px 10px rgba(248,180,0,.22);
+      flex: 0 0 30px;
+    }
+    #problem .rail .step .label{
+      font-weight:700; color:var(--bee-dark); font-size:.9rem;
+    }
+    #problem .rail .step.active{ background:rgba(248,180,0,.14); transform:translateX(3px); }
+
+    /* Content stream */
+    #problem .rowblock{ margin-bottom:3.5rem; scroll-margin-top:110px; }
+    @media (min-width: 992px){ #problem .rowblock{ margin-bottom:4rem; } }
+
+    #problem .card-lite{
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(2,6,23,.08);
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(2,6,23,.08);
+      padding:1.5rem 1.6rem;
+      height:100%;
+    }
+    #problem h3{ font-weight:800; color:var(--bee-dark); margin:0 0 .6rem; }
+    #problem p{ color:var(--bee-ink); margin:0; font-size:1.05rem; }
+    #problem .pimg{
+      width:95%; max-height:400px; object-fit:cover;
+      border-radius:16px; box-shadow:0 10px 22px rgba(0,0,0,.08);
+    }
+
+    /* Alternate image/text on desktop */
+    @media (min-width: 992px){
+      #problem .rowblock .col-text{ order:1; }
+      #problem .rowblock .col-img{ order:2; }
+      #problem .rowblock.alt .col-text{ order:2; }
+      #problem .rowblock.alt .col-img{ order:1; }
+    }
+
+    /* CTAs */
+    #problem .actions .btn{
+      padding:.9rem 1.6rem; border-radius:999px; font-weight:700;
+      box-shadow:0 8px 18px rgba(243,156,18,.18);
+    }
+    #problem .btn-ghost{
+      background:#fff; border:2px solid var(--bee-orange); color:var(--bee-dark);
+      transition:.25s transform, .25s background-color;
+    }
+    #problem .btn-ghost:hover{ background:var(--bee-yellow); transform:translateY(-2px); }
+    #problem .mb-6{ margin-bottom: 100px; }
+
+    /* ===== Compact labels for slightly narrower desktops ===== */
+    @media (max-width: 1200px){
+      #problem .rail .step .label{ display:none; }
+      #problem .rail .step{ justify-content:center; }
+    }
+
+    /* ===== Mobile: hide rail, image first, mini titles inside cards ===== */
+    @media (max-width: 991.98px){
+      #problem .problem-grid{ grid-template-columns: 1fr; }
+      #problem .rail{ display:none; }
+
+      #problem .rowblock .row .col-img { order: 1 !important; }
+      #problem .rowblock .row .col-text{ order: 2 !important; }
+
+      #problem .m-title{
+        display:block; font-weight:800; font-size:1rem; color:#1b1406;
+        margin-bottom:.35rem; letter-spacing:.2px;
+      }
+      #problem .m-title.badge{
+        display:inline-block;
+        background:rgba(248,180,0,.16);
+        border:1px solid rgba(248,180,0,.35);
+        color:#7a5a1d;
+        border-radius:999px; padding:.28rem .6rem;
+        font-weight:700; font-size:.88rem; margin-bottom:.5rem;
+      }
+    }
+    @media (min-width: 992px){ #problem .m-title{ display:none; } }
+  </style>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="60">
+    <div class="section-head mb-6">
+      <span class="kicker">The challenge</span>
+      <h2 class="title">From Varroa Pressure to Practical AI</h2>
+      <p class="lead">
+        Honeybees pollinate a huge share of our food, yet Varroa mites accelerate colony decline and threaten food security.
+        BeeHive gives beekeepers an early-warning layer that’s fast, accurate, and fits everyday work.
+      </p>
+    </div>
+  </div>
+
+  <!-- Full-width grid: rail (left) + content container (right) -->
+  <div class="problem-grid" data-aos="fade-up" data-aos-delay="80">
+    <!-- Rail OUTSIDE the container (desktop only) -->
+    <aside class="rail d-none d-lg-flex" id="problem-rail" aria-label="Section steps">
+      <div class="step active"><span class="num">01</span><span class="label">The Problem</span></div>
+      <div class="step"><span class="num">02</span><span class="label">Why BeeHive</span></div>
+      <div class="step"><span class="num">03</span><span class="label">How It Works</span></div>
+    </aside>
+
+    <!-- Content stays in a normal Bootstrap container -->
+    <div>
+      <div class="container">
+        <!-- 01 Problem -->
+        <div class="rowblock" id="p1" data-aos="fade-up" data-aos-delay="80">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 col-img">
+              <img class="pimg" src="assets/about1.png" alt="Close-up of honeybee and brood cells">
             </div>
-
-            <form id="notifyForm" class="d-flex gap-2">
-              <input type="email" class="form-control" id="notifyEmail" placeholder="your@email.com" required>
-              <button type="submit" class="btn btn-bee fw-semibold">Notify me</button>
-            </form>
-
-            <div id="notifyThanks" class="mt-3 d-none" style="color:var(--bee-dark);">
-              Thanks—we’ll email you as soon as the app is live.
+            <div class="col-lg-6 col-text">
+              <div class="card-lite">
+                <span class="m-title badge">Problem</span>
+                <h3>Varroa Mites Collapse Colonies</h3>
+                <p>
+                  Varroa feed on bees, spread viruses, and their lifecycle tracks the brood cycle—driving reduced
+                  lifespan and survivorship. With a +2–3 °C warming, annual mite populations could rise ~1.5–2×,
+                  compounding CCD risk.
+                </p>
+                <p class="mt-3">
+                  Bees support ~35% of food availability through pollination, and yield losses from reduced
+                  pollination can reach 15–30%, costing tens of billions annually.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="modal-footer" style="border:0;">
-            <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
+        <!-- 02 Why -->
+        <div class="rowblock alt" id="p2" data-aos="fade-up" data-aos-delay="120">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 col-img">
+              <img class="pimg" src="assets/about2.png" alt="Beekeeper inspecting a hive frame">
+            </div>
+            <div class="col-lg-6 col-text">
+              <div class="card-lite me-lg-4">
+                <span class="m-title badge">Why</span>
+                <h3>Beekeepers Need Always-On Support</h3>
+                <p>
+                  Today’s “eyeballing” is time-consuming and often inaccurate. BeeHive watches continuously and
+                  flags risk in time—without labs, sticky boards, or extra trips.
+                </p>
+                <p class="mt-3">
+                  Earlier interventions raise survival odds and protect yields that societies rely on.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- 03 How -->
+        <div class="rowblock" id="p3" data-aos="fade-up" data-aos-delay="140">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 col-img">
+              <img class="pimg" src="assets/about3.png" alt="Edge AI detection visualization on device">
+            </div>
+            <div class="col-lg-6 col-text">
+              <div class="card-lite">
+                <span class="m-title badge">How</span>
+                <h3>Edge AI Detection with Actionable Alerts</h3>
+                <p>
+                  Using a camera at the hive entrance or during routine checks, BeeHive runs a lightweight
+                  one-stage detector to spot likely Varroa presence in real time and trend hive signals.
+                </p>
+                <p class="mt-3">
+                  Our approach is practical in the field (phone-friendly) and adaptable across regions and seasons.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits + CTA -->
+        <div class="actions d-flex justify-content-center gap-3 mt-3">
+          <a href="#solution" class="btn btn-bee">See the Technology</a>
+          <a href="#impact" class="btn btn-ghost">Real-world Impact</a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Problem -->
-    <section id="problem" class="section section-pad">
-      <div class="container" data-aos="fade-up" data-aos-delay="60">
-        <div class="section-head mb-6">
-          <span class="kicker">The challenge</span>
-          <h2 class="title">From Varroa Pressure to Practical AI</h2>
-          <p class="lead">
-            Honeybees pollinate a huge share of our food, yet Varroa mites accelerate colony decline and threaten food security.
-            BeeHive gives beekeepers an early-warning layer that’s fast, accurate, and fits everyday work.
-          </p>
-        </div>
+  <!-- Active step highlighting -->
+  <script>
+    (function(){
+      const rail = document.getElementById('problem-rail');
+      if(!rail) return;
+      const steps = rail.querySelectorAll('.step');
+      const sections = [document.getElementById('p1'), document.getElementById('p2'), document.getElementById('p3')];
 
-        <div class="flow">
-          <!-- Step rail (auto-switches to horizontal on mobile) -->
-          <div class="rail" id="problem-rail" aria-label="Section steps">
-            <div class="step active"><span class="num">01</span><span class="label">The Problem</span></div>
-            <div class="step"><span class="num">02</span><span class="label">Why BeeHive</span></div>
-            <div class="step"><span class="num">03</span><span class="label">How It Works</span></div>
-          </div>
+      const onScroll = () => {
+        let idx = 0;
+        const y = window.scrollY + 140;
+        sections.forEach((sec, i) => {
+          const rect = sec.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          if (y >= top - 80) idx = i;
+        });
+        steps.forEach((s,i)=> s.classList.toggle('active', i===idx));
+      };
+      document.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+  </script>
+</section>
 
-          <!-- Content stream -->
-          <div>
-            <!-- 01 Problem -->
-            <div class="rowblock" id="p1" data-aos="fade-up" data-aos-delay="80">
-              <div class="row g-4 align-items-center">
-                <div class="col-lg-6 col-text">
-                  <div class="card-lite">
-                    <h3>Varroa Mites Collapse Colonies</h3>
-                    <p>
-                      Varroa feed on bees, spread viruses, and their lifecycle tracks the brood cycle—driving reduced
-                      lifespan and survivorship. With a +2–3 °C warming, annual mite populations could rise ~1.5–2×,
-                      compounding CCD risk.
-                    </p>
-                    <p class="mt-3">
-                      Bees support ~35% of food availability through pollination, and yield losses from reduced
-                      pollination can reach 15–30%, costing tens of billions annually.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-img">
-                  <img class="pimg" src="assets/about1.png" alt="Close-up of honeybee and brood cells">
-                </div>
-              </div>
-            </div>
 
-            <!-- 02 Why -->
-            <div class="rowblock alt" id="p2" data-aos="fade-up" data-aos-delay="120">
-              <div class="row g-4 align-items-center">
-                <div class="col-lg-6 col-img">
-                  <img class="pimg" src="assets/about2.png" alt="Beekeeper inspecting a hive frame">
-                </div>
-                <div class="col-lg-6 col-text">
-                  <div class="card-lite">
-                    <h3>Beekeepers Need Always-On Support</h3>
-                    <p>
-                      Today’s “eyeballing” is time-consuming and often inaccurate. BeeHive watches continuously and
-                      flags risk in time—without labs, sticky boards, or extra trips.
-                    </p>
-                    <p class="mt-3">
-                      Earlier interventions raise survival odds and protect yields that societies rely on.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+<section id="about" class="section section-pad">
+  <style>
+    #about {
+      background-color: #fffdf5;
+    }
+    #about h2 {
+      font-weight: 700;
+      color: var(--bee-dark);
+    }
+    #about p {
+      color: var(--bee-ink);
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+    #about .about-img {
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-height: 420px;
+      width: 100%;
+      object-fit: cover;
+    }
+    #about .btn-bee {
+      background: var(--bee-orange);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.8rem 1.8rem;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 8px 18px rgba(243,156,18,0.25);
+    }
+    #about .btn-bee:hover {
+      background: var(--bee-yellow);
+      color: var(--bee-dark);
+      transform: translateY(-2px);
+    }
+  </style>
 
-            <!-- 03 How -->
-            <div class="rowblock" id="p3" data-aos="fade-up" data-aos-delay="140">
-              <div class="row g-4 align-items-center">
-                <div class="col-lg-6 col-text">
-                  <div class="card-lite">
-                    <h3>Edge AI Detection with Actionable Alerts</h3>
-                    <p>
-                      Using a camera at the hive entrance or during routine checks, BeeHive runs a lightweight
-                      one-stage detector to spot likely Varroa presence in real time and trend hive signals.
-                    </p>
-                    <p class="mt-3">
-                      Our approach is practical in the field (phone-friendly) and adaptable across regions and seasons.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-img">
-                  <img class="pimg" src="assets/about3.png" alt="Edge AI detection visualization on device">
-                </div>
-              </div>
-            </div>
-
-            <!-- Benefits + CTA -->
-            <div class="actions d-flex justify-content-center gap-3 mt-3">
-              <a href="#solution" class="btn btn-bee">See the Technology</a>
-              <a href="#impact" class="btn btn-ghost">Real-world Impact</a>
-            </div>
-          </div>
-        </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-center gy-4">
+      <!-- Left Text -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
+        <h2>About AI Apis</h2>
+        <p class="mt-3">
+          <strong>AI Apis</strong> is an AI-powered monitoring system designed to combat the <strong>Varroa destructor</strong>, 
+          a deadly parasite threatening honeybee colonies worldwide. By integrating advanced image recognition 
+          and real-time hive analytics, BeeHive helps beekeepers detect infestations early, reduce chemical dependency, 
+          and ensure healthier, more sustainable pollination ecosystems.
+        </p>
+        <p>
+          The project’s mission is simple yet urgent — <em>to fight the mites and save the bees</em>. 
+          Our technology supports small and large-scale apiaries alike, helping preserve biodiversity 
+          and safeguard the world’s food supply.
+        </p>
+        <a href="#solution" class="btn btn-bee mt-3">Discover the Technology</a>
       </div>
 
-      <!-- Active step highlighting -->
-      <script>
-        (function(){
-          const rail = document.getElementById('problem-rail');
-          if(!rail) return;
-          const steps = rail.querySelectorAll('.step');
-          const sections = [document.getElementById('p1'), document.getElementById('p2'), document.getElementById('p3')];
-
-          const onScroll = () => {
-            let idx = 0;
-            const y = window.scrollY + 140;
-            sections.forEach((sec, i) => {
-              const rect = sec.getBoundingClientRect();
-              const top = rect.top + window.scrollY;
-              if (y >= top - 80) idx = i;
-            });
-            steps.forEach((s,i)=> s.classList.toggle('active', i===idx));
-          };
-          document.addEventListener('scroll', onScroll, {passive:true});
-          onScroll();
-        })();
-      </script>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section section-pad">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
-            <h2>About AI Apis</h2>
-            <p class="mt-3">
-              <strong>AI Apis</strong> is an AI-powered monitoring system designed to combat the <strong>Varroa destructor</strong>, 
-              a deadly parasite threatening honeybee colonies worldwide. By integrating advanced image recognition 
-              and real-time hive analytics, BeeHive helps beekeepers detect infestations early, reduce chemical dependency, 
-              and ensure healthier, more sustainable pollination ecosystems.
-            </p>
-            <p>
-              The project’s mission is simple yet urgent — <em>to fight the mites and save the bees</em>. 
-              Our technology supports small and large-scale apiaries alike, helping preserve biodiversity 
-              and safeguard the world’s food supply.
-            </p>
-            <a href="#solution" class="btn btn-bee mt-3">Discover the Technology</a>
-          </div>
-
-          <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
-            <img src="assets/aipis.png" alt="Beekeeper inspecting healthy honeybees" class="about-img img-fluid d-block mx-auto" style="width:90%;">
-          </div>
-        </div>
+      <!-- Right Image -->
+      <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
+        <img src="assets/aipis.png" alt="Beekeeper inspecting healthy honeybees" class="about-img img-fluid d-block mx-auto" style="width:90%;">
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<!-- ============== AI Apis Youth Social Venture — Timeline (No Images, Fixed Alignment) ============== -->
+<section id="history" class="section section-pad">
+  <style>
+    /* Scoped to #history */
+    #history{
+      position:relative;
+      background:linear-gradient(180deg, #fffef8 0%, #fffdf3 55%, #fff9e6 100%);
+    }
+    #history .section-head{
+      text-align:center; max-width:980px; margin:0 auto 2.2rem;
+    }
+    #history .kicker{
+      display:inline-block; padding:.4rem .8rem; border-radius:999px;
+      background:rgba(248,180,0,.18); border:1px solid rgba(248,180,0,.35);
+      color:#7a5a1d; font-weight:600; font-size:.9rem;
+    }
+    #history .title{
+      font-weight:800; color:var(--bee-dark);
+      font-size:clamp(1.6rem,2.2vw + 1rem,2.4rem);
+      margin:.5rem 0 .25rem; letter-spacing:.2px;
+    }
+    #history .lead{ color:var(--bee-ink); font-size:1.06rem; }
 
-    <!-- History -->
-    <section id="history" class="section section-pad">
-      <div class="container" data-aos="fade-up" data-aos-delay="60">
-        <div class="section-head mb-4">
-          <span class="kicker">Our Journey</span>
-          <h2 class="title">AI Apis Youth Social Venture History</h2>
-          <p class="lead">
-            From a student idea to an internationally recognized youth platform merging AI, ecology, and ethics.
-          </p>
-        </div>
+    /* Timeline spine (push left so it never overlaps card) */
+    #history .spine{
+      position:absolute; left:20px; top:160px; bottom:80px; width:3px;
+      background:linear-gradient(180deg, var(--bee-yellow), var(--bee-orange));
+      opacity:.32; border-radius:2px; z-index:0;
+    }
 
-        <span class="spine" aria-hidden="true"></span>
+    /* Timeline dots (left gutter, behind the card) */
+    #history .dot{
+      position:absolute; left:-50px; width:22px; height:22px;
+      border-radius:50%; background:var(--bee-orange);
+      box-shadow:0 0 0 8px rgba(243,156,18,.12);
+      top:calc(50% - 11px);
+      z-index:1; /* stays behind the card */
+    }
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="80">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">June – August 2024 · Concept & Early Research</span>
-            <h3>Origins of AI Apis</h3>
-            <p>The idea began with a student-led inquiry into how AI could address ecological crises and honeybee decline.</p>
-            <p>Explorations included computer vision for hive health and early consultations with Korean beekeepers and NGOs.</p>
-            <p>Preliminary YOLO-based experiments set the foundation for automated monitoring.</p>
-          </div>
-        </div>
+    /* Rows (extra left margin = safe gutter for spine + dot) */
+    #history .trow{ position:relative; margin:2.5rem 0 2.5rem 5rem; }
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="100">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">September – December 2024 · BeCure Prototype</span>
-            <h3>BeCure App & YOLOv8 Modeling</h3>
-            <p>Built an AI-powered hive monitoring app that detects Varroa via smartphone and alerts beekeepers in real time.</p>
-            <p>Developed a YOLOv8-based prototype with bee image datasets, centering AI ethics and sustainability.</p>
-            <p>Recognized as Runner-Up at the COP 29 Oxford Climate Change Challenge (2025) among 208 teams from 53 countries.</p>
-          </div>
-        </div>
+    /* Cards always above the decorative elements */
+    #history .tcard{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(2,6,23,.08);
+      border-radius:16px;
+      box-shadow:0 8px 22px rgba(2,6,23,.08);
+      padding:1.5rem 1.75rem;
+      position:relative; z-index:2;
+    }
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="120">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">January – March 2025 · Venture Formation</span>
-            <h3>Founding AI Apis</h3>
-            <p>Established AI Apis as a youth-led social venture integrating artificial intelligence, ecology, and education.</p>
-            <p>Mission: cultivate Ecological Intelligence—enabling machines and humans to learn coexistence.</p>
-            <p>Redefined youth innovation with student technologists acting as empathetic environmental stewards.</p>
-          </div>
-        </div>
+    #history .date-badge{
+      display:inline-block;
+      font-weight:700; font-size:.85rem; letter-spacing:.2px;
+      color:#1b1406;
+      background:linear-gradient(90deg, rgba(248,180,0,.16), rgba(243,156,18,.16));
+      border:1px solid rgba(248,180,0,.35);
+      border-radius:999px; padding:.35rem .85rem;
+    }
+    #history h3{ font-weight:800; color:var(--bee-dark); margin:.6rem 0 .5rem; }
+    #history p{ color:var(--bee-ink); margin:0 0 .4rem; }
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="140">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">April – June 2025 · Education Initiative</span>
-            <h3>To Bee Friends Program</h3>
-            <p>Launched environmental education for young children with storytelling, seedball-making, and art workshops.</p>
-            <p>Partnered with Korea Beekeepers Association & Korean Youth Beekeepers Association; collaborated with SNU Invalab.</p>
-            <p>Top 5 finalist in the Gyeonggi Volunthon; received ₩1,000,000 grant for sustainable curriculum development.</p>
-          </div>
-        </div>
+#history .trow{
+  /* stop using margin-left to “fake” a gutter */
+  margin: 2.5rem 0;
+  position: relative;
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="160">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">July – September 2025 · Community Impact</span>
-            <h3>Workshops & Volunteer Award</h3>
-            <p>Delivered in-person and online To Bee Friends workshops; launched an environmental learning app.</p>
-            <p>Reached 200+ children, connecting art, empathy, and ecology.</p>
-            <p>Honored with the 2025 Gyeonggi Province Volunteer Award for youth-led ecological engagement.</p>
-          </div>
-        </div>
+  /* real gutter: [gutter column] [content column] */
+  display: grid;
+  grid-template-columns: 56px minmax(0,1fr);  /* adjust 56px to taste */
+  align-items: center;
+  column-gap: 1rem;
+}
 
-        <div class="trow" data-aos="fade-up" data-aos-delay="180">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="tcard">
-            <span class="date-badge">October 2025 – Beyond · Partnerships & Vision</span>
-            <h3>Global Network & Future Vision</h3>
-            <p>Building a youth-centered eco-tech network across Asia and Europe with NGOs and research institutions.</p>
-            <p>Expanding AI-Edu ecological education platform; linking volunteer programs with CSR (incl. projects with Frosch).</p>
-            <p>Exploring collaboration with UNFCCC & YOUNGO to contribute to global youth innovation and sustainability dialogues.</p>
-          </div>
-        </div>
+#history .dot{
+  /* no more absolute/negative positioning */
+  position: relative;
+  left: auto; top: auto; transform: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--bee-orange);
+  box-shadow: 0 0 0 6px rgba(243,156,18,.12);
+
+  /* place the dot in the gutter col, centered */
+  grid-column: 1;
+  justify-self: center;
+  z-index: 1; /* visually behind, but not hidden */
+}
+
+#history .tcard{
+  /* ensure card is in the content column */
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
+}
+
+/* spine: align it to the center of the gutter column */
+#history .spine{
+  left: 28px;                                  /* ~= 56px / 2 */
+  top: 160px; bottom: 80px; width: 3px;
+  opacity: .32;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px){
+  #history .trow{
+    grid-template-columns: 44px minmax(0,1fr); /* narrower gutter on phones */
+    column-gap: .75rem;
+  }
+  #history .dot{
+    width: 18px; height: 18px;
+    box-shadow: 0 0 0 6px rgba(243,156,18,.12);
+  }
+  #history .spine{ left: 22px; }               /* ~= 44px / 2 */
+}
+
+  </style>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="60">
+    <div class="section-head mb-4">
+      <span class="kicker">Our Journey</span>
+      <h2 class="title">AI Apis Youth Social Venture History</h2>
+      <p class="lead">
+        From a student idea to an internationally recognized youth platform merging AI, ecology, and ethics.
+      </p>
+    </div>
+
+    <span class="spine" aria-hidden="true"></span>
+
+    <div class="trow" data-aos="fade-up" data-aos-delay="80">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">June – August 2024 · Concept & Early Research</span>
+        <h3>Origins of AI Apis</h3>
+        <p>The idea began with a student-led inquiry into how AI could address ecological crises and honeybee decline.</p>
+        <p>Explorations included computer vision for hive health and early consultations with Korean beekeepers and NGOs.</p>
+        <p>Preliminary YOLO-based experiments set the foundation for automated monitoring.</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Contact -->
-    <section id="contact" class="section section-pad text-center">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to collaborate with the BeeHive team?</p>
-        <a href="mailto:team@beehive.ai" class="email-link">team@beehive.ai</a>
+    <div class="trow" data-aos="fade-up" data-aos-delay="100">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">September – December 2024 · BeCure Prototype</span>
+        <h3>BeCure App & YOLOv8 Modeling</h3>
+        <p>Built an AI-powered hive monitoring app that detects Varroa via smartphone and alerts beekeepers in real time.</p>
+        <p>Developed a YOLOv8-based prototype with bee image datasets, centering AI ethics and sustainability.</p>
+        <p>Recognized as Runner-Up at the COP 29 Oxford Climate Change Challenge (2025) among 208 teams from 53 countries.</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="text-center py-4" style="background:linear-gradient(90deg,var(--bee-yellow),var(--bee-orange)); color:#fff;">
-      <small>&copy; 2025 BeeHive · Fight the Mites, Save the Bees</small>
-    </footer>
+    <div class="trow" data-aos="fade-up" data-aos-delay="120">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">January – March 2025 · Venture Formation</span>
+        <h3>Founding AI Apis</h3>
+        <p>Established AI Apis as a youth-led social venture integrating artificial intelligence, ecology, and education.</p>
+        <p>Mission: cultivate Ecological Intelligence—enabling machines and humans to learn coexistence.</p>
+        <p>Redefined youth innovation with student technologists acting as empathetic environmental stewards.</p>
+      </div>
+    </div>
+
+    <div class="trow" data-aos="fade-up" data-aos-delay="140">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">April – June 2025 · Education Initiative</span>
+        <h3>To Bee Friends Program</h3>
+        <p>Launched environmental education for young children with storytelling, seedball-making, and art workshops.</p>
+        <p>Partnered with Korea Beekeepers Association & Korean Youth Beekeepers Association; collaborated with SNU Invalab.</p>
+        <p>Top 5 finalist in the Gyeonggi Volunthon; received ₩1,000,000 grant for sustainable curriculum development.</p>
+      </div>
+    </div>
+
+    <div class="trow" data-aos="fade-up" data-aos-delay="160">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">July – September 2025 · Community Impact</span>
+        <h3>Workshops & Volunteer Award</h3>
+        <p>Delivered in-person and online To Bee Friends workshops; launched an environmental learning app.</p>
+        <p>Reached 200+ children, connecting art, empathy, and ecology.</p>
+        <p>Honored with the 2025 Gyeonggi Province Volunteer Award for youth-led ecological engagement.</p>
+      </div>
+    </div>
+
+    <div class="trow" data-aos="fade-up" data-aos-delay="180">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="tcard">
+        <span class="date-badge">October 2025 – Beyond · Partnerships & Vision</span>
+        <h3>Global Network & Future Vision</h3>
+        <p>Building a youth-centered eco-tech network across Asia and Europe with NGOs and research institutions.</p>
+        <p>Expanding AI-Edu ecological education platform; linking volunteer programs with CSR (incl. projects with Frosch).</p>
+        <p>Exploring collaboration with UNFCCC & YOUNGO to contribute to global youth innovation and sustainability dialogues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============== Contact Section ============== -->
+<section id="contact" class="section section-pad text-center">
+  <style>
+    #contact {
+      background: linear-gradient(180deg, #fff9e6 0%, #fffef8 100%);
+    }
+    #contact h2 {
+      font-weight: 800;
+      color: var(--bee-dark);
+      margin-bottom: 1rem;
+    }
+    #contact p {
+      color: var(--bee-ink);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    #contact .email-link {
+      display: inline-block;
+      background: var(--bee-orange);
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(243,156,18,.25);
+      transition: all 0.3s ease;
+    }
+    #contact .email-link:hover {
+      background: var(--bee-yellow);
+      color: var(--bee-dark);
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to collaborate with the BeeHive team?</p>
+    <a href="mailto:team@beehive.ai" class="email-link">team@beehive.ai</a>
+  </div>
+</section>
+
+<!-- ============== Footer ============== -->
+<footer class="text-center py-4" style="background:linear-gradient(90deg,var(--bee-yellow),var(--bee-orange)); color:#fff;">
+  <small>&copy; 2025 BeeHive · Fight the Mites, Save the Bees</small>
+</footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({ once:true, duration:900, easing:'ease-out-cubic' });
-
-      // simple email capture UX
-      const f=document.getElementById('notifyForm');
-      if(f){
-        f.addEventListener('submit',e=>{
-          e.preventDefault();
-          f.classList.add('d-none');
-          document.getElementById('notifyThanks')?.classList.remove('d-none');
-        });
-      }
     </script>
   </body>
 </html>

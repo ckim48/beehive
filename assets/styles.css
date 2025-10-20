@@ -468,10 +468,13 @@ body{
   #steps .photo-cascade{
     aspect-ratio:auto; display:grid; gap:1rem;
     filter:none;
+
+
   }
   #steps .shot{
     position:static; width:100%; height:auto; transform:none;
     box-shadow:0 10px 26px rgba(2,6,23,.12);
+
   }
 }
 #steps #achievements {

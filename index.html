@@ -437,7 +437,7 @@ Gyeonggi Province Volunteer Award.</strong></p>
       </div>
       <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="180">
         <div class="phone-frame mx-auto">
-          <img src="assets/app/app1.jpg" alt="BeCure app detecting Varroa mites" class="app-screen">
+          <img src="assets/app/appbk1.png" alt="BeCure app detecting Varroa mites" class="app-screen">
         </div>
       </div>
     </div>
@@ -455,7 +455,7 @@ Gyeonggi Province Volunteer Award.</strong></p>
       </div>
       <div class="col-lg-6 text-center" data-aos="fade-right" data-aos-delay="180">
         <div class="phone-frame mx-auto">
-          <img src="assets/app/app2.jpg" alt="BeCure app main feature dashboard" class="app-screen">
+          <img src="assets/app/appbk2.png" alt="BeCure app main feature dashboard" class="app-screen">
         </div>
       </div>
     </div>
@@ -524,6 +524,8 @@ Gyeonggi Province Volunteer Award.</strong></p>
 <section id="steps" class="section section-pad">
   <div class="container" data-aos="fade-up" data-aos-delay="60">
     <div class="section-head mb-6 text-center">
+              <span class="kicker">Educations</span>
+
       <h3 class="title">To BEE Friends Program</h3>
       <p class="lead">
         From curiosity to empathy, each class helps children understand bees not just as insects,
@@ -551,7 +553,7 @@ Gyeonggi Province Volunteer Award.</strong></p>
         </p>
       </div>
       <div class="col-md-6 col-img text-center">
-        <div class="photo-cascade">
+        <div class="photo-cascade px-4 px-lg-0">
           <img src="assets/steps/step1-2.png" alt="Step 1" class="shot s1">
           <img src="assets/steps/step1-3.png" alt="Step 2" class="shot s2">
           <img src="assets/steps/step1-1.png" alt="Step 3" class="shot s3">
@@ -582,7 +584,7 @@ Gyeonggi Province Volunteer Award.</strong></p>
         </p>
       </div>
       <div class="col-md-6 col-img text-center">
-        <div class="photo-cascade">
+        <div class="photo-cascade px-4 px-lg-0">
           <img src="assets/steps/step2-2.png" alt="Step 1" class="shot s1">
           <img src="assets/steps/step2-3.png" alt="Step 2" class="shot s2">
           <img src="assets/steps/step2-1.png" alt="Step 3" class="shot s3">
@@ -609,7 +611,7 @@ Gyeonggi Province Volunteer Award.</strong></p>
         </p>
       </div>
       <div class="col-md-6 col-img text-center">
-        <div class="photo-cascade">
+        <div class="photo-cascade px-4 px-lg-0">
           <img src="assets/steps/step3-2.png" alt="Step 1" class="shot s1">
           <img src="assets/steps/step3-1.png" alt="Step 2" class="shot s2">
           <img src="assets/steps/step3-3.png" alt="Step 3" class="shot s4">
@@ -809,5 +811,95 @@ Gyeonggi Province Volunteer Award.</strong></p>
       onScroll();
     })();
   </script>
+  <script>
+  const I18N = {
+    en: {
+      "nav.about": "About Us",
+      "nav.team": "Team",
+      "nav.app": "BeCure",
+      "nav.steps": "BEE Friends",
+
+      "hero.title": 'AI Apis: <span style="color:var(--bee-dark)">Innovation in Every Hive</span>',
+      "hero.tagline": "Youth social enterprise harnessing AI to protect bees and restore biodiversity.",
+      "hero.learn": "Learn More",
+      "hero.download": "Download App",
+
+      "about.title": "About AI Apis",
+
+      "team.title": "AI Apis Co-Founders",
+
+      "app.title": "BeCure — Fight the Mites, Save the Bees",
+      "app.purpose": "Our Purpose",
+      "app.features": "Main Features",
+      "app.vision": "Our Vision",
+
+      "steps.title": "To BEE Friends Program",
+      "ach.title": "Program Achievements",
+      "future.title": "Future Plans",
+
+      "news.title": "Honeybee News",
+
+      "contact.title": "Contact Us",
+      "contact.blurb": "Have questions or want to collaborate with the AI Apis team?",
+      "contact.emailCta": "team@AI Apis.ai",
+    },
+
+    ko: {
+      "nav.about": "소개",
+      "nav.team": "팀",
+      "nav.app": "비큐어",
+      "nav.steps": "비 프렌즈",
+
+      "hero.title": 'AI Apis: <span style="color:var(--bee-dark)">모든 벌집에 혁신을</span>',
+      "hero.tagline": "AI로 벌을 보호하고 생물다양성을 회복하는 청소년 소셜벤처입니다.",
+      "hero.learn": "자세히 보기",
+      "hero.download": "앱 다운로드",
+
+      "about.title": "AI Apis 소개",
+
+      "team.title": "AI Apis 공동 창립자",
+
+      "app.title": "BeCure — 응애를 잡고, 벌을 지키다",
+      "app.purpose": "목표",
+      "app.features": "주요 기능",
+      "app.vision": "비전",
+
+      "steps.title": "투 비 프렌즈 프로그램",
+      "ach.title": "프로그램 성과",
+      "future.title": "향후 계획",
+
+      "news.title": "꿀벌 뉴스",
+
+      "contact.title": "문의하기",
+      "contact.blurb": "질문이 있거나 AI Apis와 협업을 원하시면 연락해 주세요.",
+      "contact.emailCta": "team@AI Apis.ai",
+    }
+  };
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || I18N.en;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) el.innerHTML = dict[key]; // innerHTML to preserve spans
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem("lang", lang);
+    const btn = document.getElementById("langToggle");
+    if (btn) btn.textContent = lang === "en" ? "한국어" : "English";
+  }
+
+  (function(){
+    const saved = localStorage.getItem("lang") || "en";
+    applyLang(saved);
+    const btn = document.getElementById("langToggle");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const next = (localStorage.getItem("lang") || "en") === "en" ? "ko" : "en";
+        applyLang(next);
+      });
+    }
+  })();
+</script>
+
   </body>
 </html>

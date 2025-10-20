@@ -492,43 +492,36 @@ img, video { max-width: 100%; height: auto; }
 
 html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 
-@media (max-width:991.98px){
-  #steps .photo-cascade{
-    display:grid;gap:12px;aspect-ratio:auto;filter:none
-  }
-  #steps .shot{
-    position:static;width:100%;aspect-ratio:4/3;height:auto;
-    object-fit:cover;transform:none;border-radius:16px;
-    box-shadow:0 10px 26px rgba(2,6,23,.12)
-  }
-}
-@media (max-width:767.98px){
-
-  #steps .photo-cascade::before{content:none!important}
-  #steps .photo-cascade{overflow:hidden}
-}
 @media (max-width:767.98px){
   #steps .photo-cascade{
-    display:block!important;
-    width:100%!important;
+    display:block !important;
+    width:100% !important;
     max-width:640px;
-    margin:0 auto;
+    margin:0 auto !important;
     overflow:hidden;
     text-align:center;
+    aspect-ratio:auto !important;
   }
-  #steps .photo-cascade::before{content:none!important}
-  #steps .photo-cascade .shot{display:none!important}
-  #steps .photo-cascade .shot:last-of-type{
-    display:block!important;
-    position:relative!important;
-    left:auto;right:auto;top:auto;bottom:auto;
-    width:100%!important;
-    height:auto!important;
-    object-fit:contain!important;
-    margin:0 auto;
-    border-radius:16px;
+  #steps .photo-cascade::before{ content:none !important; }
+
+  #steps .photo-cascade .shot.s1,
+  #steps .photo-cascade .shot.s2{ display:none !important; }
+
+  #steps .photo-cascade .shot.s4,
+  #steps .photo-cascade .shot.s3{
+    display:block !important;
+    position:relative !important;
+    left:auto !important; right:auto !important; top:auto !important; bottom:auto !important;
+    transform:none !important;
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important; /* no cropping */
+    margin:0 auto !important;
+    border-radius:16px !important;
     box-shadow:0 10px 26px rgba(2,6,23,.12);
   }
+
+  #steps .col-img{ padding-left:0 !important; padding-right:0 !important; }
 }
 
 /* ============ APP SECTION ============ */

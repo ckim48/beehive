@@ -865,74 +865,29 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
   font-size:1.2rem;
   opacity:.9;
 }
+#team{background:linear-gradient(180deg,#fffef9 0%,#fff9e6 100%)}
+#team .kicker{display:inline-block;padding:.4rem .9rem;border-radius:999px;background:rgba(248,180,0,.18);border:1px solid rgba(248,180,0,.35);color:#7a5a1d;font-weight:600;font-size:.9rem;letter-spacing:.4px}
+#team .title{font-weight:800;color:var(--bee-dark);font-size:clamp(1.8rem,2.4vw + 1rem,2.4rem);margin:.5rem 0 1rem}
+#team .lead{color:var(--bee-ink);font-size:1.05rem;max-width:780px;margin:0 auto 3rem;line-height:1.6}
 
-#team {
-  background: linear-gradient(180deg,#fffef9 0%,#fff9e6 100%);
-}
-#team .kicker {
-  display:inline-block;
-  padding:.4rem .9rem;
-  border-radius:999px;
-  background:rgba(248,180,0,.18);
-  border:1px solid rgba(248,180,0,.35);
-  color:#7a5a1d;
-  font-weight:600;
-  font-size:.9rem;
-  letter-spacing:.4px;
-}
-#team .title {
-  font-weight:800;
-  color:var(--bee-dark);
-  font-size:clamp(1.8rem,2.4vw + 1rem,2.4rem);
-  margin:.5rem 0 1rem;
-}
-#team .lead {
-  color:var(--bee-ink);
-  font-size:1.05rem;
-  max-width:780px;
-  margin:0 auto 3rem;
-  line-height:1.6;
-}
-.team-card {
-  background:#fff;
-  border-radius:20px;
-  box-shadow:0 10px 26px rgba(2,6,23,.08);
-  padding:2rem 1.6rem 1.8rem;
-  transition:.3s transform ease, .3s box-shadow ease;
-  height:100%;
-}
-.team-card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 14px 36px rgba(2,6,23,.12);
-}
-.team-photo {
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:50%;
-  margin-bottom:1rem;
-  border:4px solid rgba(248,180,0,.4);
-  box-shadow:0 8px 20px rgba(2,6,23,.08);
-}
-.team-name {
-  font-weight:800;
-  color:var(--bee-dark);
-  margin-bottom:.2rem;
-}
-.team-role {
-  color:#6b5526;
-  font-size:.95rem;
-  margin-bottom:.25rem;
-}
-.team-school {
-  color:#8a6e3b;
-  font-weight:600;
-  margin-bottom:.8rem;
-}
-.team-desc {
-  color:var(--bee-ink);
-  font-size:
+.team-card{background:#fff;border-radius:20px;box-shadow:0 10px 26px rgba(2,6,23,.08);padding:2rem 1.6rem 1.8rem;transition:.3s transform ease,.3s box-shadow ease;height:100%}
+.team-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(2,6,23,.12)}
+.team-photo{width:140px;height:140px;object-fit:cover;border-radius:50%;margin-bottom:1rem;border:4px solid rgba(248,180,0,.4);box-shadow:0 8px 20px rgba(2,6,23,.08)}
+.team-body{text-align:left}
+.team-name{font-weight:800;color:var(--bee-dark);margin-bottom:.2rem}
+.team-role{color:#6b5526;font-size:.95rem;margin-bottom:.25rem}
+.team-role .subrole{font-size:.9rem}
+.team-school{color:#8a6e3b;font-weight:600;margin-bottom:.8rem}
+.team-desc{color:var(--bee-ink);font-size:1rem;line-height:1.6; text-align: left !important;}
 
+@media (min-width:992px){
+  #team .col-lg-4{flex:0 0 100%;max-width:100%}
+  .team-card{background:transparent;box-shadow:none;border-radius:0;padding:0;display:flex;gap:1.6rem;align-items:flex-start;text-align:left;transition:none}
+  .team-card:hover{transform:none;box-shadow:none}
+  .team-photo{width:160px;height:160px;margin:0;border-width:3px}
+  .team-name{font-size:1.6rem}
+  .team-desc{font-size:1.02rem;line-height:1.7;}
+  #team .col-lg-4+.col-lg-4{padding-top:2rem;border-top:1px solid rgba(2,6,23,.08)}
 }
 
 /* ===== Honeybee News ===== */

@@ -1,6 +1,6 @@
 :root{
   --bee-yellow:#f8b400;
-  --bee-orange:#f39c12;
+  --bee-orange:#ffbe00;
   --bee-dark:#2c2c2c;
   --bee-ink:#4b3b1f;
   --bee-bg:#fff9e6;
@@ -528,7 +528,8 @@ body{
 }
 #steps .ach-sub {
   color:var(--bee-ink);
-  font-size:1.02rem;
+  font-size:1.05rem;
+  font-weight: 700;
   margin:0;
 }
 #steps #future-plans {
@@ -933,6 +934,7 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
   font-size:
 
 }
+
 /* ===== Honeybee News ===== */
 #news{
   background:linear-gradient(180deg,#fffef9 0%, #fff9e6 100%);

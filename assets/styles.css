@@ -146,7 +146,7 @@ body{
   background:#fffdf5;
 }
 #about h2{font-weight:700;color:var(--bee-dark)}
-#about p{color:var(--bee-ink);font-size:1.05rem;text-align:justify}
+#about p{color:var(--bee-ink);font-size:1.05rem;text-align:left;}
 #about .about-img{
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.08);

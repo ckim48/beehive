@@ -689,7 +689,7 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
   content: "🐝";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 3;
   font-size: 1.1rem;
   opacity: .85;
 }

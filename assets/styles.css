@@ -79,7 +79,7 @@ body{
   max-width:46ch;
   color:var(--bee-ink);
 }
-.btn-bee,.btn-bee2,.btn-bee3{
+.btn-bee,.btn-bee2,.btn-bee3,.btn-bee4{
   border-radius:999px;
   font-weight:700;
   transition:.25s transform,.25s background-color,.25s box-shadow;
@@ -742,6 +742,20 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 #app .btn-bee3:hover {
   background: var(--bee-yellow);
   color: #fff;
+}
+
+.btn-bee4 {
+  background: var(--bee-orange);
+  color: white;
+  border: 2px solid var(--bee-orange);
+  padding: .65rem 1.1rem;
+  font-size: 14px;
+}
+
+.btn-bee4:hover {
+  background: white;
+  color:black;
+  border: 2px solid var(--bee-orange);
 }
 
 /* ---- Responsive ---- */

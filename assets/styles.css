@@ -1005,5 +1005,46 @@ html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 
 .navbar .btn-lang{ height: 38px; }
 
+/* ===== Legacy App CTA  ===== */
+#legacy-app{
+  background: linear-gradient(180deg, #fffdf9 0%, #fff9e6 100%);
+}
+#legacy-app .section-head{
+  text-align:center;
+  margin-bottom:3.5rem;
+}
+#legacy-app .kicker{
+  display:inline-block;
+  padding:.4rem .9rem;
+  border-radius:999px;
+  background:rgba(248,180,0,.18);
+  border:1px solid rgba(248,180,0,.35);
+  color:#7a5a1d;
+  font-weight:600;
+  font-size:.9rem;
+  letter-spacing:.4px;
+}
+#legacy-app .title{
+  font-weight:800;
+  color:var(--bee-dark);
+  font-size:clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
+  margin:.6rem 0 .4rem;
+  letter-spacing:.2px;
+}
+#legacy-app .lead{
+  color:var(--bee-ink);
+  font-size:1.06rem;
+  max-width:720px;
+  margin:0 auto 2rem;
+  line-height:1.6;
+}
+
+#legacy-app .legacy-card{
+  background:#fff;
+  border:1px solid rgba(2,6,23,.08);
+  border-radius:16px;
+  box-shadow:0 10px 24px rgba(2,6,23,.08);
+  padding:1rem;
+}
 
 

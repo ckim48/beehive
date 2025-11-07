@@ -79,7 +79,7 @@ body{
   max-width:46ch;
   color:var(--bee-ink);
 }
-.btn-bee,.btn-bee2,.btn-bee3,.btn-bee4{
+.btn-bee,.btn-bee2,.btn-bee3,.btn-bee4,.btn-bee5{
   border-radius:999px;
   font-weight:700;
   transition:.25s transform,.25s background-color,.25s box-shadow;
@@ -93,6 +93,18 @@ body{
 .btn-bee:hover{
   background:var(--bee-yellow);
   color:var(--bee-dark);
+  transform:translateY(-2px);
+}
+.btn-bee5{
+  background:white;
+  color:var(--bee-dark);
+  border: 1px solid var(--bee-orange);
+  padding:.85rem 1.6rem;
+}
+.btn-bee5:hover{
+
+    background:var(--bee-orange);
+  color:#fff;
   transform:translateY(-2px);
 }
 .btn-bee2{
